@@ -39,8 +39,25 @@
 
 ## Задание 1
 ### Предложите вариант изменения найденных переменных для 10 уровней в игре. Визуализируйте изменение уровня сложности в таблице.
-Среди переменных, влияющих на сложность игры были выделены Speed, Left Right Dictance, Chance Direction и Time Between Egg Dragon. Увеличение скорости, дистанции, шанса сменить направление или же уменьшение времени между появлением яиц приводит к повышению сложности игры. Таким образом формула вычисления сложности может принять вид: 
+Среди переменных, влияющих на сложность игры были выделены:
+- Speed - скорость передвижения дракона
+- Time Between Egg Drops - время между повявлением яиц
+- Left Right Distance - дистанция между левой и правой границей
+- Chance Direction - шанс того, что дракон изменит свое направление
+
 ![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/cb137e0d-0ae7-4d75-83d5-ec8d9d36a4d8)
+
+Для повышения сложности игры я буду увеличивать скорость, шанс смены направления, дистанцию и уменьшать время между появлением яиц. Таким образом формула итоговой сложности может принять вид:
+difficult = speed + distance + chance + 1/egg_time
+
+Стартовые значения и коэффициент изменения
+- Speed - 1; 1.5
+- Time Between Egg Drops - 5; 0.8
+- Left Right Distance - 10; 1.08
+- Chance Direction - 0.001; 1.5
+
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/1db5e9af-13b9-47f1-80c7-231c9e96063e)
+
 
 
 ## Задание 2
@@ -48,7 +65,6 @@
 
 ## Задание 3
 ### Решение в 80+ баллов должно заполнять google-таблицу данными из Python. В Python данные также должны быть визуализированы.
-![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/e5ce00aa-0829-4069-9675-5b9f0da9c855)
 
 ```py
 import gspread
@@ -57,7 +73,7 @@ import numpy as np
 
 speed = 1
 egg_time = 5
-distance = 5
+distance = 10
 chance = 0.001
 lvl_count = 10
 difficult = []
@@ -82,7 +98,7 @@ for i in range(1, 11):
     sh.sheet1.update(('F' + str(i+1)), difficult[i-1])
     speed = round(speed * 1.5, 3)
     egg_time = round(egg_time * 0.8, 3)
-    distance = round(distance * 1.05, 3)
+    distance = round(distance * 1.08, 3)
     chance = round(chance * 1.5, 3)
     
 fig, ax = plt.subplots()
