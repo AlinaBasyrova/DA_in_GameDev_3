@@ -475,10 +475,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragonEggPrefab: {fileID: 4475230230894892804, guid: 970c79319c561944caee02fb4aa1d015, type: 3}
-  speed: 1
-  timeBetweenEggDrops: 5
-  leftRightDistance: 10
-  chanceDirection: 0.001
+  speed: 3.375
+  timeBetweenEggDrops: 2.56
+  leftRightDistance: 12.597
+  chanceDirection: 0.005
 --- !u!1 &918499877
 GameObject:
   m_ObjectHideFlags: 0
