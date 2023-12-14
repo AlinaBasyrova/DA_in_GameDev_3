@@ -66,6 +66,7 @@ difficult = speed + distance + chance + 1/egg_time
 ## Задание 3
 ### Решение в 80+ баллов должно заполнять google-таблицу данными из Python. В Python данные также должны быть визуализированы.
 
+Код на заполнение гугл таблицы и визуализации данных в график: 
 ```py
 import gspread
 import matplotlib.pyplot as plt
@@ -75,7 +76,6 @@ speed = 1
 egg_time = 5
 distance = 10
 chance = 0.001
-lvl_count = 10
 difficult = []
 gc = gspread.service_account(filename='da-in-gamedev-2-404609-c13383911b0b.json')
 sh = gc.open("DA_3")
@@ -107,13 +107,16 @@ y = np.array(difficult)
 ax.plot(x, y)
 ax.grid()
 plt.xticks(range(1, 11, 1), range(1, 11, 1))
-plt.yticks(range(1, 35, 2), range(1, 35, 2))
+plt.yticks(range(1, 60, 2), range(1, 60, 2))
 plt.xlabel("№ Уровня")
 plt.ylabel("Сложность")
 plt.show()
 
 print('Done')
 ```
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/98359f6c-563d-4eda-9223-2d1899fc06f5)
+
+Ссылка на гугл таблицу: https://docs.google.com/spreadsheets/d/1X28uLmePfOKcbzpjT2LXlPisUZySIPThV5M4SXmsPG4/edit?usp=sharing
 
 
 ## Выводы
