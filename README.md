@@ -48,6 +48,56 @@
 
 ## Задание 3
 ### Решение в 80+ баллов должно заполнять google-таблицу данными из Python. В Python данные также должны быть визуализированы.
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/e5ce00aa-0829-4069-9675-5b9f0da9c855)
+
+```py
+import gspread
+import matplotlib.pyplot as plt
+import numpy as np
+
+speed = 1
+egg_time = 5
+distance = 5
+chance = 0.001
+lvl_count = 10
+difficult = []
+gc = gspread.service_account(filename='da-in-gamedev-2-404609-c13383911b0b.json')
+sh = gc.open("DA_3")
+
+sh.sheet1.update(('A1'), "№ Уровня")
+sh.sheet1.update(('B1'), "Speed")
+sh.sheet1.update(('C1'), "Time Between Egg Drops")
+sh.sheet1.update(('D1'), "Left Right Distance")
+sh.sheet1.update(('E1'), "Chance Direction")
+sh.sheet1.update(('F1'), "Difficulty")
+
+
+for i in range(1, 11):
+    difficult.append(round(speed + distance + chance + 1/egg_time, 3))
+    sh.sheet1.update(('A' + str(i+1)), i)
+    sh.sheet1.update(('B' + str(i+1)), speed)
+    sh.sheet1.update(('C' + str(i+1)), egg_time)
+    sh.sheet1.update(('D' + str(i+1)), distance)
+    sh.sheet1.update(('E' + str(i+1)), chance)
+    sh.sheet1.update(('F' + str(i+1)), difficult[i-1])
+    speed = round(speed * 1.5, 3)
+    egg_time = round(egg_time * 0.8, 3)
+    distance = round(distance * 1.05, 3)
+    chance = round(chance * 1.5, 3)
+    
+fig, ax = plt.subplots()
+x = np.arange(1, 11)
+y = np.array(difficult)
+ax.plot(x, y)
+ax.grid()
+plt.xticks(range(1, 11, 1), range(1, 11, 1))
+plt.yticks(range(1, 35, 2), range(1, 35, 2))
+plt.xlabel("№ Уровня")
+plt.ylabel("Сложность")
+plt.show()
+
+print('Done')
+```
 
 
 ## Выводы
