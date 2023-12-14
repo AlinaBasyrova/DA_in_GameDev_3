@@ -63,6 +63,16 @@ difficult = speed + distance + chance + 1/egg_time
 ## Задание 2
 ### Создайте 10 сцен на Unity с изменяющимся уровнем сложности.
 
+Я создала 10 сцен и изменила характеристики дракона в соответсвии с таблицей в п. 1.
+
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/58038ad4-1667-492b-9c41-e42bfce27bf4)
+
+Изменение характеристик на примере сцен 4 и 10:
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/423accaa-62d1-4e74-a64f-0a507d331aed)
+![image](https://github.com/AlinaBasyrova/DA_in_GameDev_3/assets/129521982/81d4c33b-92c4-4d23-83aa-c9aba2b9a1b3)
+
+
+
 ## Задание 3
 ### Решение в 80+ баллов должно заполнять google-таблицу данными из Python. В Python данные также должны быть визуализированы.
 
@@ -121,7 +131,7 @@ print('Done')
 
 ## Выводы
 
-- В ходе данной лабораторной работы я познакомилась с Unity, Jupyter Notebook, Anaconda и VS Code. Вывела строку "Hello World" с использованием языков Python и C# в таких средах, как Jupyter Notebook и Unity.
+- В ходе лабороторной работы я проанализировала игру Dragon Picker и добавила в нее еще 9 уровней с возрастанием сложности (в итоге 10 уровней), написан скрипт на Python, который заполняет таблицу данными, необходимыми для создания сцен, и визуализирует эти данные.
 
 | Plugin | README |
 | ------ | ------ |
